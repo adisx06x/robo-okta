@@ -1,0 +1,38 @@
+project_name: robo-okta
+env:
+  - CGO_ENABLED=0
+  - GO111MODULE=on
+before:
+  hooks:
+    - go mod download
+archives:
+- id: robo-okta
+  replacements:
+    darwin: Darwin
+    linux: Linux
+    windows: Windows
+    386: i386
+    amd64: x86_64
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ .Tag }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+    - '^docs:'
+    - '^test:'
+brew:
+  name: robo-okta
+  description: "A CLI to automate cumbersome Okta UI tasks"
+  skip_upload: auto
+  github:
+      owner: adisx06x
+      name: homebrew-tap
+  commit_author:
+      name: Adis Mordan
+      email: adismordan@gmail.com
+  folder: Formula
+  test: |
+    system "#{bin}/robo-okta version"

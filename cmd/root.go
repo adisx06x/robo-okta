@@ -7,7 +7,7 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "roboOkta",
+	Use:   "robo-okta",
 	Short: "Automates cumbersome Okta UI tasks",
 	Long:  "\n A collection of automated Okta UI taks that are slow when being done manually.",
 }
