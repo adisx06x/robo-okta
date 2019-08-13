@@ -17,7 +17,7 @@ func NewOktaClient() *OktaClient {
 	myclient := &OktaClient{}
 
 	if os.Getenv("OKTA_CLIENT_ORGURL") == "" {
-		log.Fatal("Must set environment variable OKTA_CLIENT_ORGURL (ie: https://example.okta.com")
+		log.Fatal("Must set environment variable OKTA_CLIENT_ORGURL (ie: https://example.okta.com)")
 	}
 	if os.Getenv("OKTA_CLIENT_TOKEN") == "" {
 		log.Fatal("Must set API token as environment variable OKTA_CLIENT_TOKEN")
