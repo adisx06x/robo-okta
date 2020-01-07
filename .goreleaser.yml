@@ -24,15 +24,16 @@ changelog:
     - '^docs:'
     - '^test:'
 brews:
-  name: robo-okta
-  description: "A CLI to automate cumbersome Okta UI tasks"
-  skip_upload: auto
-  github:
-      owner: adisx06x
-      name: homebrew-tap
-  commit_author:
-      name: Adis Mordan
-      email: adismordan@gmail.com
-  folder: Formula
-  test: |
-    system "#{bin}/robo-okta version"
+  -
+    name: robo-okta
+    description: "A CLI to automate cumbersome Okta UI tasks"
+    skip_upload: auto
+    github:
+        owner: adisx06x
+        name: homebrew-tap
+    commit_author:
+        name: Adis Mordan
+        email: adismordan@gmail.com
+    folder: Formula
+    test: |
+      system "#{bin}/robo-okta version"
