@@ -23,7 +23,7 @@ changelog:
     exclude:
     - '^docs:'
     - '^test:'
-brew:
+brews:
   name: robo-okta
   description: "A CLI to automate cumbersome Okta UI tasks"
   skip_upload: auto
