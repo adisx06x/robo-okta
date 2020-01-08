@@ -4,6 +4,12 @@
 
 Robo-Okta is a cli that automates cumbersome Okta tasks done in the UI.
 
+## Installation
+
+```console
+brew install adisx06x/tap/robo-okta
+```
+
 ## Initial Setup
 
 To use Robo-Okta, you must have your Okta org URL and proper API credentials.
