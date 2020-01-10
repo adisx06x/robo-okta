@@ -15,6 +15,6 @@ jobs:
     - name: Print ref
       run: echo ${{ github.ref }} 
     - name: Checkout code
-      uses: actions/checkout@v1
+      uses: actions/checkout@master
     - name: Test
-      uses: cedrickring/golang-action/go${{ matrix.go-version }}@1.4.1
+      uses: cedrickring/golang-action/go1.13@1.4.1
