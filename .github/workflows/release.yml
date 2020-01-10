@@ -22,7 +22,7 @@ jobs:
       name: Set up Go
       uses: actions/setup-go@master
       with:
-        go-version: 1.13.x
+        go-version: ${{ matrix.go-version }}
     - 
       name: goreleaser
       uses: goreleaser/goreleaser-action@master
