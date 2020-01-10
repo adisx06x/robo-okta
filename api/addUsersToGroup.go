@@ -31,7 +31,7 @@ func (c *OktaClient) GetUserIDs(arr []string) []string {
 	arrayOfEmails := arr
 	var arrayOfIds []string
 	for _, email := range arrayOfEmails {
-		user, _, err := c.User.GetUser(email, nil)
+		user, _, err := c.User.GetUser(email)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -43,7 +43,7 @@ func (c *OktaClient) GetUserIDs(arr []string) []string {
 func (c *OktaClient) AddIDsToGroup(arr []string, groupID string) {
 	var errors []error
 	for _, userID := range arr {
-		_, err := c.Group.AddUserToGroup(groupID, userID, nil)
+		_, err := c.Group.AddUserToGroup(groupID, userID)
 		if err != nil {
 			errors = append(errors, err)
 		}

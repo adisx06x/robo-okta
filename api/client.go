@@ -1,6 +1,7 @@
 package api
 
 import (
+	"context"
 	"log"
 	"os"
 
@@ -26,8 +27,29 @@ func NewOktaClient() *OktaClient {
 	oktaDomain := os.Getenv("OKTA_CLIENT_ORGURL")
 	apiToken := os.Getenv("OKTA_CLIENT_TOKEN")
 
-	config := okta.NewConfig().WithOrgUrl(oktaDomain).WithToken(apiToken)
+	// config := okta.NewConfig().WithOrgUrl(oktaDomain).WithToken(apiToken)
+	// d := time.Now().Add(50 * time.Millisecond)
+	// ctx, _ := context.WithDeadline(context.Background(), d)
+	config, _ := okta.NewClient(context.TODO(), okta.WithOrgUrl(oktaDomain), okta.WithToken(apiToken))
 
-	myclient.Client = okta.NewClient(config, nil, nil)
+	// client := okta.NewClient(context, okta.WithOrgUrl("https://{yourOktaDomain}"), okta.WithToken("{apiToken}"))
+
+	// myclient.Client, _ = okta.NewClient(config)
+	// return myclient
+	myclient.Client = config
+	// myclient.WithOrgUrl = oktaDomain
+	// c := OktaClient{config}
+	// d := new(OktaClient)
+	// println(myclient)
+	// println(config)
+	// myclient.Client =
+	// return config
 	return myclient
+
 }
+
+// c := &Client{}
+// 	c.config = config
+// 	c.requestExecutor = NewRequestExecutor(&config.HttpClient, oktaCache, config)
+
+// 	c.resource.client = c

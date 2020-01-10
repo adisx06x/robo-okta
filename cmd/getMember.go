@@ -21,7 +21,7 @@ var getMemberCmd = &cobra.Command{
 		client := api.NewOktaClient()
 
 		userLogin := args[0]
-		user, _, err := client.User.GetUser(userLogin, nil)
+		user, _, err := client.User.GetUser(userLogin)
 		if err != nil {
 			log.Fatal(err)
 		}
