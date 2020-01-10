@@ -17,11 +17,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
     - name: Set up Go
-      uses: actions/setup-go@v1
+      uses: actions/setup-go@master
       with:
         go-version: ${{ matrix.go-version }}
     - name: goreleaser
-      uses: goreleaser/goreleaser-action@v1
+      uses: goreleaser/goreleaser-action@master
       with:
         version: latest
         args: release --rm-dist
